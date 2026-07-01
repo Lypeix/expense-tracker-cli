@@ -1,4 +1,4 @@
-Expense Tracker CLI
+# Expense Tracker CLI
 
 A command-line finance tracker for adding expenses, saving them to JSON, and viewing spending reports.
 
