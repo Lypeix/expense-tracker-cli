@@ -4,7 +4,7 @@ A command-line finance tracker for adding expenses, saving them to JSON, and vie
 
 ## Roadmap
 
-- [ ] Create multi-file project structure
+- [x] Create multi-file project structure
 - [ ] Add `Expense` class
 - [ ] Add `ExpenseTracker` class
 - [ ] Add user input menu
