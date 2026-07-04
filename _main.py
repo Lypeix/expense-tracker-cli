@@ -27,8 +27,11 @@ def main():
             tracker.add_expense(expense)
 
         elif action == "2":
-            for expense in tracker.expenses:
-                print(f"{expense.name} - {expense.amount} PLN - {expense.category} - {expense.date}")
+            if len(tracker.expenses) == 0:
+                print("You have no expenses!")
+            else:
+                for expense in tracker.expenses:
+                    print(f"{expense.name} - {expense.amount} PLN - {expense.category} - {expense.date}")
 
         elif action == "3":
             print(f"Total spent: {tracker.get_total_spent()} PLN")
