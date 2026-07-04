@@ -2,3 +2,13 @@
 
 DAY 1 PROGRESS (01.07.2026)
 - Laid multi-file structure 
+
+DAY 2 PROGRESS (02.07.2026)
+- Created and finished classes: Expense, ExpenseTracker in models.py
+- Imported and used classes from models.py into main.py
+- Added tracker list to the main.py
+- Added basic sequence printing otu expenses without user input
+
+Day 3 PROGRESS (04.07.2026)
+- Added user_chouice and get_float to utils.py, then imported to main.py
+- Updated the sequence in main.py to feature user input, allowing the user to add expense by himself
