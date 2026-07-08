@@ -10,8 +10,8 @@ A command-line finance tracker for adding expenses, saving them to JSON, and vie
 - [x] Add user input menu
 - [x] Add expense creation
 - [x] Store expenses in memory
-- [ ] Save expenses to JSON
-- [ ] Load expenses from JSON
+- [x] Save expenses to JSON
+- [x] Load expenses from JSON
 - [ ] Display all expenses
 - [ ] Show total spending
 - [ ] Show spending by category
