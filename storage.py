@@ -21,7 +21,7 @@ def load_expenses():
         with open("expenses.json", "r") as file:
             data = json.load(file)
 
-    except FileNotFoundError, json.JSONDecodeError:
+    except (FileNotFoundError, json.JSONDecodeError):
         return []
     
     expenses = []
