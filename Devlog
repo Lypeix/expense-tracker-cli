@@ -10,5 +10,10 @@ DAY 2 PROGRESS (02.07.2026)
 - Added basic sequence printing otu expenses without user input
 
 Day 3 PROGRESS (04.07.2026)
-- Added user_chouice and get_float to utils.py, then imported to main.py
+- Added user_choice and get_float to utils.py, then imported to main.py
 - Updated the sequence in main.py to feature user input, allowing the user to add expense by himself
+
+Day 4 PROGRESS (08.07.2026)
+- Added save_expenses and load_expenses into storage.py
+- Added list to the expenses.json
+- Connected storage.py functions to main.py
