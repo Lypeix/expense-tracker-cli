@@ -1,5 +1,6 @@
 from models import Expense, ExpenseTracker
 from utils import user_choice, get_float
+from storage import save_expenses, load_expenses
 
 def create_expense_from_input():
     name = input("Name: ")
@@ -11,7 +12,10 @@ def create_expense_from_input():
 
 def main():
     tracker = ExpenseTracker()
+    tracker.expenses = load_expenses()
     
+
+
     while True:
         action = user_choice("What would you like to do?"
                     "\n1. Add expense"
@@ -25,6 +29,7 @@ def main():
         if action == "1":
             expense = create_expense_from_input()
             tracker.add_expense(expense)
+            save_expenses(tracker.expenses)
 
         elif action == "2":
             if len(tracker.expenses) == 0:
