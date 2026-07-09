@@ -21,3 +21,7 @@ Day 4 PROGRESS (08.07.2026)
 Day 5 PROGRESS (09.07.2026)
 - Added choose_category() to utils.py 
 - Implemented choose_category into main.py
+- Added categories.json for easier access to categories
+- Added load_categories() in storage.py to load categories into the list inside categories.json
+- Added spending_by_category to reports.py
+- Added option to view spendings by category in main.py
