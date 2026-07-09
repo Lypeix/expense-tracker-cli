@@ -14,7 +14,7 @@ A command-line finance tracker for adding expenses, saving them to JSON, and vie
 - [x] Load expenses from JSON
 - [x] Display all expenses
 - [x] Show total spending
-- [ ] Show spending by category
+- [x] Show spending by category
 - [ ] Add date support
 - [ ] Filter expenses by month
 - [ ] Add input validation
