@@ -26,8 +26,8 @@ def main():
                     "\n1. Add expense"
                     "\n2. Show expenses"
                     "\n3. Show total spent by category"
-                    "\n3. Show total spent amount"
-                    "\n4. Quit"
+                    "\n4. Show total spent amount"
+                    "\n5. Quit"
                     "\n> ",
                     ["1", "2", "3", "4", "5"]
                     )
