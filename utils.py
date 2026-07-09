@@ -1,3 +1,5 @@
+from datetime import datetime
+
 def user_choice(prompt, valid_choices):
     while True:
         choice = input(prompt).strip().lower()
@@ -21,7 +23,7 @@ def get_float(prompt):
             print("Invalid number")
 
 
-def choose_category():
+def choose_category(categories):
     categories = [
         "Bills",
         "Entertainment",
@@ -46,3 +48,15 @@ def choose_category():
                 return categories[choice - 1]
 
         print(f"Invalid number")
+
+def get_date():
+
+    while True:
+        date = input("Date: (DD-MM-YYYY)")
+
+        try:
+            valid_date = datetime.strptime(date, "%d-%m-%Y")
+            return valid_date.strftime("%d-%m-%Y")
+        
+        except ValueError:
+            print("Invalid date format")
