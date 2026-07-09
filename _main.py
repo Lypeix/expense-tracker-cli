@@ -1,11 +1,11 @@
 from models import Expense, ExpenseTracker
-from utils import user_choice, get_float
+from utils import user_choice, get_float, choose_category
 from storage import save_expenses, load_expenses
 
 def create_expense_from_input():
     name = input("Name: ")
     amount = get_float("Amount: ")
-    category = input("Category: ")
+    category = choose_category()
     date = input("Date: ")
 
     return Expense(name, amount, category, date)
@@ -47,4 +47,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-    
