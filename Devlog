@@ -17,3 +17,7 @@ Day 4 PROGRESS (08.07.2026)
 - Added save_expenses and load_expenses into storage.py
 - Added list to the expenses.json
 - Connected storage.py functions to main.py
+
+Day 5 PROGRESS (09.07.2026)
+- Added choose_category() to utils.py 
+- Implemented choose_category into main.py
