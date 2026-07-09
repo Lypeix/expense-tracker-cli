@@ -1,5 +1,5 @@
 from models import Expense, ExpenseTracker
-from utils import user_choice, get_float, choose_category
+from utils import user_choice, get_float, choose_category, get_date
 from storage import save_expenses, load_expenses, load_categories
 from reports import spending_by_category
 
@@ -8,7 +8,7 @@ def create_expense_from_input(categories):
     name = input("Name: ")
     amount = get_float("Amount: ")
     category = choose_category(categories)
-    date = input("Date: ")
+    date = get_date()
 
     return Expense(name, amount, category, date)
 
