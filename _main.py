@@ -1,7 +1,7 @@
 from models import Expense, ExpenseTracker
 from utils import user_choice, get_float, choose_category, get_date
 from storage import save_expenses, load_expenses, load_categories
-from reports import spending_by_category
+from reports import spending_by_category, expenses_by_month
 
 
 def create_expense_from_input(categories):
@@ -26,10 +26,11 @@ def main():
                     "\n1. Add expense"
                     "\n2. Show expenses"
                     "\n3. Show total spent by category"
-                    "\n4. Show total spent amount"
-                    "\n5. Quit"
+                    "\n4. Show expenses by month"
+                    "\n5. Show total spent amount"
+                    "\n6. Quit"
                     "\n> ",
-                    ["1", "2", "3", "4", "5"]
+                    ["1", "2", "3", "4", "5", "6"]
                     )
         
         if action == "1":
@@ -54,14 +55,25 @@ def main():
                 for category, amount in report.items():
                     print(f"Category: {category} |  PLN: {amount}")
 
-
         elif action == "4":
+            if len(tracker.expenses) == 0:
+                print("You have no expenses!")
+            else:
+            
+                month = int(input("Choose a month: (1-12)\n> "))
+
+                report = expenses_by_month(tracker.expenses, month)
+                
+                for expense in report:
+                    print(f"{month}: {amount} PLN")
+
+        elif action == "5":
             if len(tracker.expenses) == 0:
                 print("You have no expenses!")
             else:
                 print(f"Total spent: {tracker.get_total_spent()} PLN")
 
-        elif action == "5":
+        elif action == "6":
             break
 
 if __name__ == "__main__":
