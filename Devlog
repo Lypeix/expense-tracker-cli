@@ -27,3 +27,7 @@ Day 5 PROGRESS (09.07.2026)
 - Added option to view spendings by category in main.py
 - Added get_data() with the help of python datatime module into utils.py for coherent date format
 - Implemented get_data() to main.py
+
+Day 6 PROGRESS (10.07.2026)
+- Added expenses_by_month to report.py
+- Implemented fully functional show expenses by month as fourth option inside main.py that checks whether there are expenses in current month and then prints the result
