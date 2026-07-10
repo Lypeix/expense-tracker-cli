@@ -61,11 +61,13 @@ def main():
             else:
             
                 month = int(input("Choose a month: (1-12)\n> "))
-
+            
                 report = expenses_by_month(tracker.expenses, month)
-                
+                if not report:
+                    print("There are no expenses for this month")    
+
                 for expense in report:
-                    print(f"{month}: {amount} PLN")
+                    print(f"{expense.name} - {expense.amount} PLN - {expense.category} - {expense.date}")
 
         elif action == "5":
             if len(tracker.expenses) == 0:
