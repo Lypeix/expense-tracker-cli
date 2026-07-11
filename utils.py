@@ -60,3 +60,18 @@ def get_date():
         
         except ValueError:
             print("Invalid date format")
+
+def get_month():
+    while True:
+        try:
+            month = user_choice("Choose a month from from 1 to 12\n> ",
+                                ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+                                )
+
+                                
+            return month.zfill(2)
+
+            
+
+        except ValueError:
+            print("Invalid month! Choose from 1 to 12")
