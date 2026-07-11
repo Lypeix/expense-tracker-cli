@@ -40,4 +40,5 @@ Day 7 PROGRESS (11.07.2026)
 - Added get_text() so that user cannot put whitespace as an expense name
 - Added del_expense(tracker) into utils.py so that user can delete expenses directly from the tracker list
 - Added exit option for every major feature
+- Ensured input validation everywhere
 - Tested the program multiple times
