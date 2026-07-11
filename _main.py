@@ -1,11 +1,11 @@
 from models import Expense, ExpenseTracker
-from utils import user_choice, get_float, choose_category, get_date, get_month
+from utils import user_choice, get_float, choose_category, get_date, get_month, get_name, del_expense
 from storage import save_expenses, load_expenses, load_categories
 from reports import get_total_spent, filter_by_category, filter_by_month
 
 
 def create_expense_from_input(categories):
-    name = input("Name: ")
+    name = get_name()
     amount = get_float("Amount: ")
     category = choose_category(categories)
     date = get_date()
@@ -57,9 +57,10 @@ def action_loop():
                     "\n1. Add expense"
                     "\n2. Show expenses"
                     "\n3. Show total spent amount"
-                    "\n4. Quit"
+                    "\n4. Delete expense"
+                    "\n5. Quit"
                     "\n> ",
-                    ["1", "2", "3", "4"]
+                    ["1", "2", "3", "4", "5"]
                     )
         
         if action == "1":
@@ -81,6 +82,9 @@ def action_loop():
                 show_total_spent_menu(tracker, categories)
 
         elif action == "4":
+            del_expense(tracker)
+
+        elif action == "5":
             break
 
 
