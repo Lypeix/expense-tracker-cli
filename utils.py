@@ -1,4 +1,6 @@
 from datetime import datetime
+from storage import save_expenses
+
 
 def user_choice(prompt, valid_choices):
     while True:
@@ -75,3 +77,45 @@ def get_month():
 
         except ValueError:
             print("Invalid month! Choose from 1 to 12")
+
+def get_name():
+    while True:
+        
+        value = input("Name: ").strip()
+
+        if value:
+            return value
+        
+        else: 
+            print("This field cannot be empty!") 
+
+
+def del_expense(tracker):
+    if len(tracker.expenses) == 0:
+        print("You have no expenses to delete!")
+        return
+
+    else:
+
+        for idx, expense in enumerate(tracker.expenses, start=1):
+            print(f"{idx}. {expense.name} - {expense.amount} PLN - {expense.category} - {expense.date}")
+        
+        try:
+            choice = int(input("Which expense would you like to delete? (Select the corresponding number)\n> "))
+
+            if 1 <= choice <= len(tracker.expenses):
+                
+                deleted_expense = tracker.expenses[choice - 1]
+                del tracker.expenses[choice - 1]
+
+                save_expenses(tracker.expenses)
+
+                print(f"{deleted_expense.name} has been successfuly removed!")
+            else:
+                print("Invalid number!")
+                return
+            
+            
+
+        except ValueError:
+            print("Invalid number")
