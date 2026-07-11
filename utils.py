@@ -80,11 +80,15 @@ def get_month():
 
 def get_name():
     while True:
-        
-        value = input("Name: ").strip()
+        print("Type '0' if you would like to go back")
+        name = input("Name: ").strip()
 
-        if value:
-            return value
+        if name == "0":
+            return None
+
+        elif name:
+            return name
+        
         
         else: 
             print("This field cannot be empty!") 
@@ -96,14 +100,17 @@ def del_expense(tracker):
         return
 
     else:
-
+        print(f"0. Exit")
         for idx, expense in enumerate(tracker.expenses, start=1):
             print(f"{idx}. {expense.name} - {expense.amount} PLN - {expense.category} - {expense.date}")
         
         try:
             choice = int(input("Which expense would you like to delete? (Select the corresponding number)\n> "))
 
-            if 1 <= choice <= len(tracker.expenses):
+            if choice == 0:
+                return
+
+            elif 1 <= choice <= len(tracker.expenses):
                 
                 deleted_expense = tracker.expenses[choice - 1]
                 del tracker.expenses[choice - 1]
