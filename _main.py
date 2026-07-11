@@ -1,7 +1,7 @@
 from models import Expense, ExpenseTracker
-from utils import user_choice, get_float, choose_category, get_date
+from utils import user_choice, get_float, choose_category, get_date, get_month
 from storage import save_expenses, load_expenses, load_categories
-from reports import spending_by_category, expenses_by_month
+from reports import get_total_spent, filter_by_category, filter_by_month
 
 
 def create_expense_from_input(categories):
@@ -13,7 +13,38 @@ def create_expense_from_input(categories):
     return Expense(name, amount, category, date)
 
 
-def main():
+def show_total_spent_menu(tracker, categories):
+    answer = user_choice("Show total: "
+        "\n1. All expenses"
+        "\n2. Filter by category"
+        "\n3. Filter by month"
+        "\n4. Back"
+        "\n> ",
+        ["1", "2", "3", "4"]
+        )
+                
+    if answer == "1":
+        total = get_total_spent(tracker.expenses)
+        print(f"Total spent: {total} PLN")
+                
+    elif answer == "2":
+        category = choose_category(categories)
+        filtered_expenses = filter_by_category(tracker.expenses, category)  
+        total = get_total_spent(filtered_expenses)
+        print(f"Total spent in {category}: {total} PLN")
+
+    elif answer == "3":
+        month = get_month()
+        filtered_expenses = filter_by_month(tracker.expenses, month)
+        total = get_total_spent(filtered_expenses)
+        print(f"Total spent in {month}: {total} PLN")
+
+
+
+    elif answer == "4":
+        return
+
+def action_loop():
     tracker = ExpenseTracker()
     
     tracker.expenses = load_expenses()
@@ -25,12 +56,10 @@ def main():
         action = user_choice("What would you like to do?"
                     "\n1. Add expense"
                     "\n2. Show expenses"
-                    "\n3. Show total spent by category"
-                    "\n4. Show expenses by month"
-                    "\n5. Show total spent amount"
-                    "\n6. Quit"
+                    "\n3. Show total spent amount"
+                    "\n4. Quit"
                     "\n> ",
-                    ["1", "2", "3", "4", "5", "6"]
+                    ["1", "2", "3", "4"]
                     )
         
         if action == "1":
@@ -49,34 +78,14 @@ def main():
             if len(tracker.expenses) == 0:
                 print("You have no expenses!")
             else:
-                
-                report = spending_by_category(tracker.expenses)  
-
-                for category, amount in report.items():
-                    print(f"Category: {category} |  PLN: {amount}")
+                show_total_spent_menu(tracker, categories)
 
         elif action == "4":
-            if len(tracker.expenses) == 0:
-                print("You have no expenses!")
-            else:
-            
-                month = int(input("Choose a month: (1-12)\n> "))
-            
-                report = expenses_by_month(tracker.expenses, month)
-                if not report:
-                    print("There are no expenses for this month")    
-
-                for expense in report:
-                    print(f"{expense.name} - {expense.amount} PLN - {expense.category} - {expense.date}")
-
-        elif action == "5":
-            if len(tracker.expenses) == 0:
-                print("You have no expenses!")
-            else:
-                print(f"Total spent: {tracker.get_total_spent()} PLN")
-
-        elif action == "6":
             break
+
+
+def main():
+    action_loop()
 
 if __name__ == "__main__":
     main()
