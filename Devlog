@@ -31,3 +31,9 @@ Day 5 PROGRESS (09.07.2026)
 Day 6 PROGRESS (10.07.2026)
 - Added expenses_by_month to reports.py
 - Implemented fully functional show expenses by month as fourth option inside main.py that checks whether there are expenses in current month and then prints the result
+
+Day 7 PROGRESS (11.07.2026)
+- Added get_month() to utils.py 
+- Added filter_by_month() to reports.py 
+- Added get_total_spent() to reports.py for easier access
+- Merged options to choose by category/month with get_total_spent for cleaner and more scalable architecture
