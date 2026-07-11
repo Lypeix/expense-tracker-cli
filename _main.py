@@ -20,12 +20,12 @@ def create_expense_from_input(categories):
 
 def show_total_spent_menu(tracker, categories):
     answer = user_choice("Show total: "
+        "\n0. Exit"
         "\n1. All expenses"
         "\n2. Filter by category"
         "\n3. Filter by month"
-        "\n4. Exit"
         "\n> ",
-        ["1", "2", "3", "4"]
+        ["0", "1", "2", "3", "0"]
         )
                 
     if answer == "1":
@@ -59,13 +59,13 @@ def action_loop():
 
     while True:
         action = user_choice("What would you like to do?"
+                    "\n0. Exit"
                     "\n1. Add expense"
                     "\n2. Show expenses"
                     "\n3. Show total spent amount"
                     "\n4. Delete expense"
-                    "\n5. Quit"
                     "\n> ",
-                    ["1", "2", "3", "4", "5"]
+                    ["0", "1", "2", "3", "4"]
                     )
         
         if action == "1":
@@ -93,7 +93,7 @@ def action_loop():
         elif action == "4":
             del_expense(tracker)
 
-        elif action == "5":
+        elif action == "0":
             break
 
 
