@@ -1,27 +1,30 @@
-from datetime import datetime
-
-def spending_by_category(expenses):
-
-    result = {}
+def get_total_spent(expenses):
+    total = 0
 
     for expense in expenses:
+        total += expense.amount
 
-        category = expense.category
+    return total
 
-        if category not in result:
-            result[category] = 0
 
-        result[category] += expense.amount
+def filter_by_category(expenses, category):
 
-    return result 
-
-def expenses_by_month(expenses, month):
-    result = []
+    filtered_expenses = []
 
     for expense in expenses:
-        date = datetime.strptime(expense.date, "%d-%m-%Y")
+        if expense.category == category:
+            filtered_expenses.append(expense)
 
-        if date.month == month:
-            result.append(expense)
+    return filtered_expenses 
 
-    return result
+def filter_by_month(expenses, month):
+    filtered_expenses = []
+
+    for expense in expenses:
+        if expense.date[3:5] == month:
+            filtered_expenses.append(expense)
+
+    print(expense.date, expense.date[3:5], month)
+
+    return filtered_expenses
+    
