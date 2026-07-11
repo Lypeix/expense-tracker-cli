@@ -5,7 +5,12 @@ from reports import get_total_spent, filter_by_category, filter_by_month
 
 
 def create_expense_from_input(categories):
+
     name = get_name()
+
+    if name is None:
+        return None
+
     amount = get_float("Amount: ")
     category = choose_category(categories)
     date = get_date()
@@ -18,7 +23,7 @@ def show_total_spent_menu(tracker, categories):
         "\n1. All expenses"
         "\n2. Filter by category"
         "\n3. Filter by month"
-        "\n4. Back"
+        "\n4. Exit"
         "\n> ",
         ["1", "2", "3", "4"]
         )
@@ -65,8 +70,12 @@ def action_loop():
         
         if action == "1":
             expense = create_expense_from_input(categories)
-            tracker.add_expense(expense)
-            save_expenses(tracker.expenses)
+
+            if expense == None:
+                print("Process cancelled")
+            else:
+                tracker.add_expense(expense)
+                save_expenses(tracker.expenses)
 
         elif action == "2":
             if len(tracker.expenses) == 0:
