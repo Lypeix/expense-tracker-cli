@@ -36,4 +36,4 @@ Day 7 PROGRESS (11.07.2026)
 - Added get_month() to utils.py 
 - Added filter_by_month() to reports.py 
 - Added get_total_spent() to reports.py for reusable calculation
-- Merged category/month options into the total spent for cleaner and more scalable architecture
+- Merged category + month options into the total spent for cleaner and more scalable architecture
