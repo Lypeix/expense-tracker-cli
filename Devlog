@@ -46,3 +46,10 @@ Session 2 (~120 Minutes)
 - Added exit option for every major feature
 - Ensured input validation everywhere
 - Tested the program multiple times
+
+Day 8 PROGRESS (12.07.2026)
+
+Session 1 (~30 Minutes)
+- Downloaded pytest
+- Added folder with tests
+- Added file containting 3 basic tests for reports.py
