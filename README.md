@@ -31,5 +31,5 @@ _main.py
 - [x] Filter expenses by month
 - [x] Add feature allowing to delete expenses
 - [x] Add input validation
-- [ ] Add README with usage examples
+- [x] Add README with usage examples
 - [ ] Add basic pytest tests
