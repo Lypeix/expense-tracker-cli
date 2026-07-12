@@ -32,4 +32,4 @@ _main.py
 - [x] Add feature allowing to delete expenses
 - [x] Add input validation
 - [x] Add README with usage examples
-- [ ] Add basic pytest tests
+- [x] Add basic pytest tests
