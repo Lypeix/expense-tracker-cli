@@ -1,6 +1,6 @@
 # Expense Tracker CLI
 
-A command-line finance tracker for adding expenses, saving them to JSON, and viewing spending reports. This project was made as a part of my learning journey with it's main purpose being introduction of OOP, tests, working with multiple files and structuring code as cleanly as possible
+A command-line finance tracker for adding expenses, saving them to JSON, and viewing spending reports. This project was made as a part of my learning journey with its main purpose being introduction of OOP, JSON tests, working with multiple files and structuring code as cleanly as possible
 
 ## How to run:
 _main.py
